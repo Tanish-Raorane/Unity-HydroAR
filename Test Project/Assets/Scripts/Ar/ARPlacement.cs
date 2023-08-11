@@ -47,7 +47,7 @@ public class ARPlacement : MonoBehaviour
                 if (arRaycastManager.Raycast(touchPosition, hits, TrackableType.PlaneWithinPolygon))
                 {
                     var hitPose = hits[0].pose;
-                    SpawnedObject = Instantiate(ObjToInstantiate, hitPose.position, hitPose.rotation);
+                    SpawnedObject = Instantiate(ObjToInstantiate, hitPose.position, ObjToInstantiate.transform.rotation);
                 }
             }
 
