@@ -5,8 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class AdditiveSceneLoad : MonoBehaviour
 {
+    GameObject Indi;
+    void Start()
+    {
+        Indi = GameObject.Find("PlaceIndicator");
+    }
+    
     public void LoadTerrain()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        if (Indi.activeInHierarchy)
+        {
+            SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        }
     }
 }
