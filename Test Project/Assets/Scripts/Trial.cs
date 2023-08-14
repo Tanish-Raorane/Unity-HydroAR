@@ -12,16 +12,17 @@ public class Trial : MonoBehaviour
     void Start()
     {
         placeIndicator = FindObjectOfType<PlaceIndicator>();
-        mr = ObjectToPlace.GetComponent<MeshRenderer>();
-        mr.enabled = false;
+        //mr = ObjectToPlace.GetComponent<MeshRenderer>();
+        //mr.enabled = false;
+        ObjectToPlace.SetActive(false);
     }
 
     public void PressToPlace()
     {
 
-
-        mr.enabled = true;
-            //ObjectToPlace.transform.position = placeIndicator.transform.position;
+        ObjectToPlace.SetActive(true);
+        //mr.enabled = true;
+        ObjectToPlace.transform.position = placeIndicator.transform.position;
         
         //if (SpawnedObject == null)
         //{
