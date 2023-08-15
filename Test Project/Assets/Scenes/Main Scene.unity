@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1242c7d556f8246bee1b2aece2e58a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Indi: {fileID: 1880906823}
 --- !u!1 &374924387
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +608,7 @@ GameObject:
   - component: {fileID: 725708276}
   m_Layer: 0
   m_Name: AR Session Origin
-  m_TagString: Untagged
+  m_TagString: ARSO
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1302,7 +1303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9609bdab50ed12c47af234570ed7cb64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Indicator: {fileID: 0}
+  Indicator: {fileID: 1883924284}
 --- !u!1 &1883924284
 GameObject:
   m_ObjectHideFlags: 0

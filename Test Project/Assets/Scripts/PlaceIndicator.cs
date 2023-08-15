@@ -14,7 +14,7 @@ public class PlaceIndicator : MonoBehaviour
     void Start()
     {
         arRaycastManager = FindObjectOfType<ARRaycastManager>();
-        Indicator = transform.GetChild(0).gameObject;
+        
         Indicator.SetActive(false);
     }
 
