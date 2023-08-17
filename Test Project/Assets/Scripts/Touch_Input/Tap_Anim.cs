@@ -16,6 +16,7 @@ public class Tap_Anim : MonoBehaviour
 
     int count = 0;
     private Touch touch;
+    public LockManager lockmanager;
     
     void Start()
     {
@@ -25,43 +26,46 @@ public class Tap_Anim : MonoBehaviour
   
     void Update()
     {
-        if(Input.touchCount > 0)
+        if (lockmanager.isLocked)
         {
-            touch = Input.GetTouch(0);
-            if(touch.phase == TouchPhase.Began)
-            { 
-                count++;
-                if (count == 1)
+            if (Input.touchCount > 0)
+            {
+                touch = Input.GetTouch(0);
+                if (touch.phase == TouchPhase.Began)
                 {
-                    animator_LF.SetTrigger("Tap_Lake_Fog");
-                    animator_OF.SetTrigger("Tap_Ocean_Fog");
+                    count++;
+                    if (count == 1)
+                    {
+                        animator_LF.SetTrigger("Tap_Lake_Fog");
+                        animator_OF.SetTrigger("Tap_Ocean_Fog");
 
+                    }
+
+                    if (count == 2)
+                    {
+                        animator_C1.SetTrigger("Cloud 1_Formation");
+                        animator_C2.SetTrigger("Cloud 2_Formation");
+                        animator_C3.SetTrigger("Cloud 3_Formation");
+                    }
+
+                    if (count == 3)
+                    {
+                        animator_C1.SetTrigger("Cloud 1_Movement");
+                        animator_C2.SetTrigger("Cloud 2_Movement");
+                        animator_C3.SetTrigger("Cloud 3_Movement");
+                    }
+
+                    if (count == 4)
+                    {
+
+                        R1.Play();
+                        R2.Play();
+                        R3.Play();
+
+                    }
                 }
 
-                if (count == 2)
-                {
-                    animator_C1.SetTrigger("Cloud 1_Formation");
-                    animator_C2.SetTrigger("Cloud 2_Formation");
-                    animator_C3.SetTrigger("Cloud 3_Formation");
-                }
-
-                if (count == 3)
-                {
-                    animator_C1.SetTrigger("Cloud 1_Movement");
-                    animator_C2.SetTrigger("Cloud 2_Movement");
-                    animator_C3.SetTrigger("Cloud 3_Movement");
-                }
-
-                if (count == 4)
-                {
-
-                    R1.Play();
-                    R2.Play();
-                    R3.Play();
-
-                }
             }
-        
         }
         
     }

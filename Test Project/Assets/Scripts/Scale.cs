@@ -42,13 +42,14 @@ public class Scale : MonoBehaviour
                 Previous_Dist = Current_Dist;
                 First_Pinch = false;
             }
+            
 
             if(Current_Dist > Previous_Dist)
             {
                 OScale = ARSO.transform.localScale;
                 NScale = OScale * 0.94f;
                 ARSO.transform.localScale = NScale;
-                Current_Dist = Previous_Dist;
+                Previous_Dist = Current_Dist;
             } 
             
             if(Current_Dist < Previous_Dist)
@@ -56,7 +57,7 @@ public class Scale : MonoBehaviour
                 OScale = ARSO.transform.localScale;
                 NScale = OScale * 1.06f;
                 ARSO.transform.localScale = NScale;
-                Current_Dist = Previous_Dist;
+                Previous_Dist = Current_Dist;
             }
         }
         else
