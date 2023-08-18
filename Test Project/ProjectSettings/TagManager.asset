@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - ARSO
+  - PivotPoint
+  - PlaceIndicator
+  - PlaceModelButton
   layers:
   - Default
   - TransparentFX

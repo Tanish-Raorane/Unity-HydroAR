@@ -6,4 +6,5 @@ using UnityEngine.XR.ARSubsystems;
 public class ARSO_Holder : MonoBehaviour
 {
     public ARSessionOrigin arSessionOrigin;
+    //public GameObject PivotPoint;
 }
