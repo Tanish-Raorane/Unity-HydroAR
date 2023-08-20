@@ -6,20 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Unused/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Main Scene.unity
     guid: 44bbbb4c58ad5b843b723536655e29fa
   - enabled: 0
-    path: Assets/Scenes/Copy.unity
+    path: Assets/Scenes/Unused/Copy.unity
     guid: 2d995c4b7a5a55f46b76c1aea6f738eb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Terrain.unity
     guid: 2ebd8d405fdece54881596940ed8d3d4
   - enabled: 0
     path: Assets/Scenes/New Scene.unity
     guid: 0dcf37363168e8848bf5d83c06530941
+  - enabled: 1
+    path: Assets/Scenes/Surface Scene.unity
+    guid: 88a4d29b04b5f87439e7077b901d0dc1
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: a6c69e63cd5de3345a8caa0534f29123, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 5c0cd0084b573bf459840c31edacf643, type: 2}

@@ -33,11 +33,9 @@ public class Tap_Anim : MonoBehaviour
     {
         if (lockmanager.isLocked)
         {
-            Arrow_Sun.SetActive(true);
-            animator_AS.SetTrigger("Arrow_Sun");
             StartCoroutine(After_AS());
-
         }
+        
 
     }
 
@@ -82,16 +80,28 @@ public class Tap_Anim : MonoBehaviour
 
     IEnumerator After_AS()
     {
-        Debug.Log("Start");
+       //Debug.Log("Start");
+        Arrow_Sun.SetActive(true);
+        animator_AS.SetTrigger("Arrow_Sun");
         yield return new WaitForSecondsRealtime(5.5f);
-        Arrow_Evaporation.SetActive(true);
-        animator_AE.SetTrigger("Arrow_Evaporation");
-        yield return new WaitForSeconds(6f);
-        animator_LF.SetTrigger("Tap_Lake_Fog");
-        animator_OF.SetTrigger("Tap_Ocean_Fog");
-        yield return new WaitForSeconds(14f);
+
+        if (lockmanager.isLocked)
+        {
+            Arrow_Evaporation.SetActive(true);
+            animator_AE.SetTrigger("Arrow_Evaporation");
+            yield return new WaitForSeconds(6f);
+        }
+
+        if (lockmanager.isLocked)
+        {
+            
+            animator_LF.SetTrigger("Tap_Lake_Fog");
+            animator_OF.SetTrigger("Tap_Ocean_Fog");
+            yield return new WaitForSeconds(14f);
+        }
+        
         canTap = true;
-        Debug.Log("End");
+        //Debug.Log("End");
     }
 }
 

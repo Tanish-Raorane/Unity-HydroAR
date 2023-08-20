@@ -7,12 +7,8 @@ public class AdditiveSceneLoad : MonoBehaviour
 {
     public GameObject Indi;
  
-    public void LoadTerrain()
+    public void LoadScene(string SceneName)
     {
-        if (Indi.activeInHierarchy)
-        {
-            SceneManager.LoadScene(1, LoadSceneMode.Additive);
-            
-        }
+            SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
     }
 }
