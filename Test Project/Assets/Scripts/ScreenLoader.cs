@@ -37,5 +37,19 @@ public class ScreenLoader : MonoBehaviour
         }
     }
 
-   
+   public void BackToWarning()
+    {
+        Surface.SetActive(false);
+        Warning.SetActive(true);
+    } 
+    public void BackToSurface()
+    {
+        Lighting.SetActive(false);
+        Surface.SetActive(true);
+    } 
+    public void BackToLighting()
+    {
+        ARScreen1.SetActive(false);
+        Lighting.SetActive(true);
+    }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class LockManager : MonoBehaviour
 {
-    public Button lockbutton;
+    public Button playbutton;
     public bool isLocked = false;
     public GameObject Model;
     public Slider Scaler, Rotator;
@@ -27,7 +27,7 @@ public class LockManager : MonoBehaviour
         isLocked = !isLocked;
         if (isLocked)
         {
-            lockbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Locked";
+            playbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Locked";
             //Model.GetComponent<Scale_Rotate>().enabled = false;
             Scaler.gameObject.SetActive(false);
             Rotator.gameObject.SetActive(false);
@@ -42,7 +42,7 @@ public class LockManager : MonoBehaviour
 
         else
         {
-            lockbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Unlocked";
+            playbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Unlocked";
             // Model.GetComponent<Scale_Rotate>().enabled = true;
             if (wasClickedScale)
             {
