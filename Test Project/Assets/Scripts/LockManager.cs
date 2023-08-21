@@ -23,11 +23,14 @@ public class LockManager : MonoBehaviour
 
     public void Lock()
     {
+        //Deactivate all Prompts (TextBoxes/images)
+        //Reset ALL Animators here
+        //Try implementing Pause Button
         //Debug.Log("Hi");
         isLocked = !isLocked;
         if (isLocked)
         {
-            playbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Locked";
+           
             //Model.GetComponent<Scale_Rotate>().enabled = false;
             Scaler.gameObject.SetActive(false);
             Rotator.gameObject.SetActive(false);
@@ -42,7 +45,7 @@ public class LockManager : MonoBehaviour
 
         else
         {
-            playbutton.GetComponentInChildren<TextMeshProUGUI>().text = "Unlocked";
+            
             // Model.GetComponent<Scale_Rotate>().enabled = true;
             if (wasClickedScale)
             {

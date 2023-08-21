@@ -2,14 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow_Eva_Event : MonoBehaviour
+public class ArrowCloudEvent : MonoBehaviour
 {
-   
-
-    void DisableObject()
+    public void Disable()
     {
         gameObject.SetActive(false);
     }
-
-    
 }

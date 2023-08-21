@@ -915,7 +915,6 @@ GameObject:
   - component: {fileID: 402868163}
   - component: {fileID: 402868162}
   - component: {fileID: 402868161}
-  - component: {fileID: 402868160}
   m_Layer: 5
   m_Name: AR Model Screen2
   m_TagString: Untagged
@@ -923,19 +922,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &402868160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 402868159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae1242c7d556f8246bee1b2aece2e58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Indi: {fileID: 1880906823}
 --- !u!114 &402868161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4024,7 +4010,7 @@ GameObject:
   - component: {fileID: 2064041033}
   m_Layer: 5
   m_Name: Place Button
-  m_TagString: Untagged
+  m_TagString: PlaceModelButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
