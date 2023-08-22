@@ -76,6 +76,7 @@ public class Tap_Anim : MonoBehaviour
 
         if (count == 2)
         {
+            //StopCoroutine(AfterCloudForm());
             StartCoroutine(AfterCloudMovement());
             if (!lockmanager.isLocked)
             {
@@ -145,25 +146,39 @@ public class Tap_Anim : MonoBehaviour
     {
         EvaporationMessage.gameObject.SetActive(false);
         TapOnScreenEva.gameObject.SetActive(false);
+        
 
         animator_C1.SetTrigger("Cloud 1_Formation");
         animator_C2.SetTrigger("Cloud 2_Formation");
         animator_C3.SetTrigger("Cloud 3_Formation");
         yield return new WaitForSecondsRealtime(4.5f);
 
-        CloudFormMessage.gameObject.SetActive(true);
-        TapOnScreenCloudForm.gameObject.SetActive(true);
+        //Debug.Log("Before active " + CloudFormMessage.gameObject.activeSelf);
+        if (lockmanager.isLocked)
+        {
+            CloudFormMessage.gameObject.SetActive(true);
+            TapOnScreenCloudForm.gameObject.SetActive(true);
+        }
+
+        //Debug.Log("after active  " + CloudFormMessage.gameObject.activeSelf);
+       
+
         if (lockmanager.isLocked)
         {
             canTap = true;
+            
+            
         }
 
     }
 
     IEnumerator AfterCloudMovement()
     {
+        Debug.Log("1");
         CloudFormMessage.gameObject.SetActive(false);
+        Debug.Log("2");
         TapOnScreenCloudForm.gameObject.SetActive(false);
+        //Debug.Log("After deactive " + CloudFormMessage.gameObject.activeSelf);
 
         Arrow_Cloud.SetActive(true);
         animator_AC.SetTrigger("Arrow_Clouds");
@@ -179,6 +194,7 @@ public class Tap_Anim : MonoBehaviour
         if (lockmanager.isLocked)
         {
             canTap = true;
+            yield break;
         }
     }
 

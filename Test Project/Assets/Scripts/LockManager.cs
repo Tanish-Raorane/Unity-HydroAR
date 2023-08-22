@@ -17,10 +17,10 @@ public class LockManager : MonoBehaviour
 
     /* For Rebinding (Resetting) all animations once the 
      *  user presses on Play Button to start animation.*/
-    public Image EvaporationMessage, TapOnScreenEva;
-    public Image CloudFormMessage, TapOnScreenCloudForm;
-    public Image CloudMoveMessage, TapOnScreenCloudMove;
-    public Image PrecipitationMessage, TapOnScreenPreci;
+    //public Image EvaporationMessage, TapOnScreenEva;
+    //public Image CloudFormMessage, TapOnScreenCloudForm;
+    //public Image CloudMoveMessage, TapOnScreenCloudMove;
+    //public Image PrecipitationMessage, TapOnScreenPreci;
 
     public Animator animator_LF;
     public Animator animator_OF;
@@ -35,6 +35,7 @@ public class LockManager : MonoBehaviour
     private void Start()
     {
         TA = gameObject.GetComponent<Tap_Anim>();
+        
     }
 
 
@@ -72,14 +73,14 @@ public class LockManager : MonoBehaviour
             R3.Clear();
 
             /*Deactivating all Prompts.*/
-            EvaporationMessage.gameObject.SetActive(false);
-            TapOnScreenEva.gameObject.SetActive(false);
-            CloudFormMessage.gameObject.SetActive(false);
-            TapOnScreenCloudForm.gameObject.SetActive(false);
-            CloudMoveMessage.gameObject.SetActive(false);
-            TapOnScreenCloudMove.gameObject.SetActive(false);
-            PrecipitationMessage.gameObject.SetActive(false);
-            TapOnScreenPreci.gameObject.SetActive(false);
+            //EvaporationMessage.gameObject.SetActive(false);
+            //TapOnScreenEva.gameObject.SetActive(false);
+            //CloudFormMessage.gameObject.SetActive(false);
+            //TapOnScreenCloudForm.gameObject.SetActive(false);
+            //CloudMoveMessage.gameObject.SetActive(false);
+            //TapOnScreenCloudMove.gameObject.SetActive(false);
+            //PrecipitationMessage.gameObject.SetActive(false);
+            //TapOnScreenPreci.gameObject.SetActive(false);
 
 
             Scaler.gameObject.SetActive(false);
