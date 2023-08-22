@@ -2311,6 +2311,25 @@ MonoBehaviour:
   Rotator: {fileID: 1301802535}
   ScaleButton: {fileID: 1726930095}
   RotateButton: {fileID: 252515388}
+  EvaporationMessage: {fileID: 992856596}
+  TapOnScreenEva: {fileID: 1744166696}
+  CloudFormMessage: {fileID: 699945260}
+  TapOnScreenCloudForm: {fileID: 1000294066}
+  CloudMoveMessage: {fileID: 1377163634}
+  TapOnScreenCloudMove: {fileID: 147188408}
+  PrecipitationMessage: {fileID: 1209746894}
+  TapOnScreenPreci: {fileID: 1330960118}
+  animator_LF: {fileID: 1652812337}
+  animator_OF: {fileID: 1652812336}
+  animator_C1: {fileID: 1652812335}
+  animator_C2: {fileID: 1652812334}
+  animator_C3: {fileID: 1652812333}
+  animator_AS: {fileID: 1652812332}
+  animator_AE: {fileID: 1652812331}
+  animator_AC: {fileID: 1652812330}
+  R1: {fileID: 1652812329}
+  R2: {fileID: 1652812328}
+  R3: {fileID: 1652812327}
 --- !u!114 &1470769128
 MonoBehaviour:
   m_ObjectHideFlags: 0

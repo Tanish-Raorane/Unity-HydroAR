@@ -64,12 +64,12 @@ public class Tap_Anim : MonoBehaviour
             if (!lockmanager.isLocked)
             {
                 StopCoroutine(AfterCloudForm());
-                animator_C1.Rebind();
-                animator_C1.Update(0f);
-                animator_C2.Rebind();
-                animator_C2.Update(0f);
-                animator_C3.Rebind();
-                animator_C3.Update(0f);
+                //animator_C1.Rebind();
+                //animator_C1.Update(0f);
+                //animator_C2.Rebind();
+                //animator_C2.Update(0f);
+                //animator_C3.Rebind();
+                //animator_C3.Update(0f);
             }
 
         }
@@ -80,14 +80,14 @@ public class Tap_Anim : MonoBehaviour
             if (!lockmanager.isLocked)
             {
                 StopCoroutine(AfterCloudMovement());
-                animator_AC.Rebind();
-                animator_AC.Update(0f);
-                animator_C1.Rebind();
-                animator_C1.Update(0f);
-                animator_C2.Rebind();
-                animator_C2.Update(0f);
-                animator_C3.Rebind();
-                animator_C3.Update(0f);
+                //animator_AC.Rebind();
+                //animator_AC.Update(0f);
+                //animator_C1.Rebind();
+                //animator_C1.Update(0f);
+                //animator_C2.Rebind();
+                //animator_C2.Update(0f);
+                //animator_C3.Rebind();
+                //animator_C3.Update(0f);
             }
         }
 
@@ -97,9 +97,9 @@ public class Tap_Anim : MonoBehaviour
             if(!lockmanager.isLocked)
             {
                 StopCoroutine(AfterPrecipitation());
-                R1.Clear();
-                R2.Clear();
-                R3.Clear();
+                //R1.Clear();
+                //R2.Clear();
+                //R3.Clear();
             }
         }
 
@@ -125,8 +125,11 @@ public class Tap_Anim : MonoBehaviour
             animator_LF.SetTrigger("Tap_Lake_Fog");
             animator_OF.SetTrigger("Tap_Ocean_Fog");
             yield return new WaitForSecondsRealtime(14f);
-            EvaporationMessage.gameObject.SetActive(true);
-            TapOnScreenEva.gameObject.SetActive(true);
+            if (lockmanager.isLocked)
+            {
+                EvaporationMessage.gameObject.SetActive(true);
+                TapOnScreenEva.gameObject.SetActive(true);
+            }
 
         }
 
