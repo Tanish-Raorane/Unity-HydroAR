@@ -51,26 +51,26 @@ public class LockManager : MonoBehaviour
         {
             /*Resetting all animations so that when the user presses on play button again,
              The animations will start from the beginning.*/
-            animator_AS.Rebind();
-            animator_AS.Update(0f);
-            animator_AE.Rebind();
-            animator_AE.Update(0f);
-            animator_LF.Rebind();
-            animator_LF.Update(0f);
-            animator_OF.Rebind();
-            animator_OF.Update(0f);
-            animator_AC.Rebind();
-            animator_AC.Update(0f);
-            animator_C1.Rebind();
-            animator_C1.Update(0f);
-            animator_C2.Rebind();
-            animator_C2.Update(0f);
-            animator_C3.Rebind();
-            animator_C3.Update(0f);
+            //animator_AS.Rebind();
+            //animator_AS.Update(0f);
+            //animator_AE.Rebind();
+            //animator_AE.Update(0f);
+            //animator_LF.Rebind();
+            //animator_LF.Update(0f);
+            //animator_OF.Rebind();
+            //animator_OF.Update(0f);
+            //animator_AC.Rebind();
+            //animator_AC.Update(0f);
+            //animator_C1.Rebind();
+            //animator_C1.Update(0f);
+            //animator_C2.Rebind();
+            //animator_C2.Update(0f);
+            //animator_C3.Rebind();
+            //animator_C3.Update(0f);
 
-            R1.Clear();
-            R2.Clear();
-            R3.Clear();
+            //R1.Clear();
+            //R2.Clear();
+            //R3.Clear();
 
             /*Deactivating all Prompts.*/
             //EvaporationMessage.gameObject.SetActive(false);
