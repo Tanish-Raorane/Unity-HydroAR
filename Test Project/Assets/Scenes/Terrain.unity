@@ -2270,6 +2270,7 @@ GameObject:
   - component: {fileID: 1470769126}
   - component: {fileID: 1470769127}
   - component: {fileID: 1470769128}
+  - component: {fileID: 1470769129}
   m_Layer: 0
   m_Name: ButtonManager
   m_TagString: Untagged
@@ -2329,9 +2330,43 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470769124}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 660d02783a95a354f92965fd0eb8396f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EvaporationMessage: {fileID: 992856596}
+  TapOnScreenEva: {fileID: 1744166696}
+  CloudFormMessage: {fileID: 699945260}
+  TapOnScreenCloudForm: {fileID: 1000294066}
+  CloudMoveMessage: {fileID: 1377163634}
+  TapOnScreenCloudMove: {fileID: 147188408}
+  PrecipitationMessage: {fileID: 1209746894}
+  TapOnScreenPreci: {fileID: 1330960118}
+  animator_LF: {fileID: 1652812337}
+  animator_OF: {fileID: 1652812336}
+  animator_C1: {fileID: 1652812335}
+  animator_C2: {fileID: 1652812334}
+  animator_C3: {fileID: 1652812333}
+  animator_AS: {fileID: 1652812332}
+  animator_AE: {fileID: 1652812331}
+  animator_AC: {fileID: 1652812330}
+  R1: {fileID: 1652812329}
+  R2: {fileID: 1652812328}
+  R3: {fileID: 1652812327}
+  Arrow_Sun: {fileID: 1224772174}
+  Arrow_Evaporation: {fileID: 1224772173}
+  Arrow_Cloud: {fileID: 1224772172}
+--- !u!114 &1470769129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470769124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b7210a0f5a0bf4caf5860832e61366, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EvaporationMessage: {fileID: 992856596}

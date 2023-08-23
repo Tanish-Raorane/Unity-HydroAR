@@ -11,7 +11,7 @@ public class LockManager : MonoBehaviour
     public GameObject Model;
     public Slider Scaler, Rotator;
     public Button ScaleButton, RotateButton;
-    Tap_Anim TA;
+    Anim_Trial TA;
     bool wasClickedScale = false;
     bool wasClickedRotate = false;
 
@@ -34,7 +34,7 @@ public class LockManager : MonoBehaviour
 
     private void Start()
     {
-        TA = gameObject.GetComponent<Tap_Anim>();
+        TA = gameObject.GetComponent<Anim_Trial>();
         
     }
 
@@ -90,7 +90,7 @@ public class LockManager : MonoBehaviour
             //Scaler.enabled = false;
             //Rotator.enabled = false;
             Model.GetComponent<Lean.Touch.LeanDragTranslate>().enabled = false;
-            TA.PlayAnim();
+            TA.StartCoroutine(PlayAnim);
           
         }
 
