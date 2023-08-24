@@ -4,10 +4,9 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LockManager : MonoBehaviour
+public class LockManageBackup : MonoBehaviour
 {
     public Button playbutton;
-    public bool isPaused = false;
     public bool isLocked = false;
     public GameObject Model;
     public Slider Scaler, Rotator;
@@ -16,7 +15,6 @@ public class LockManager : MonoBehaviour
     //Tap_Anim TA;
     bool wasClickedScale = false;
     bool wasClickedRotate = false;
-    bool FirstTime = true;
 
     /* For Rebinding (Resetting) all animations once the 
      *  user presses on Play Button to start animation.*/
@@ -39,7 +37,7 @@ public class LockManager : MonoBehaviour
     {
         TA = gameObject.GetComponent<Anim_Trial>();
         //TA = gameObject.GetComponent<Tap_Anim>();
-        
+
     }
 
 
@@ -50,27 +48,39 @@ public class LockManager : MonoBehaviour
         //Try implementing Pause Button
         //Debug.Log("Hi");
         // Remove Tap Interaction with UI Button
-        
-        if (!isLocked)
+        isLocked = !isLocked;
+        if (isLocked)
         {
-            isLocked = true;
+            /*Resetting all animations so that when the user presses on play button again,
+             The animations will start from the beginning.*/
+
+
+            /*Deactivating all Prompts.*/
+            //EvaporationMessage.gameObject.SetActive(false);
+            //TapOnScreenEva.gameObject.SetActive(false);
+            //CloudFormMessage.gameObject.SetActive(false);
+            //TapOnScreenCloudForm.gameObject.SetActive(false);
+            //CloudMoveMessage.gameObject.SetActive(false);
+            //TapOnScreenCloudMove.gameObject.SetActive(false);
+            //PrecipitationMessage.gameObject.SetActive(false);
+            //TapOnScreenPreci.gameObject.SetActive(false);
+
+
             Scaler.gameObject.SetActive(false);
             Rotator.gameObject.SetActive(false);
             ScaleButton.gameObject.SetActive(false);
             RotateButton.gameObject.SetActive(false);
+            //Scaler.enabled = false;
+            //Rotator.enabled = false;
             Model.GetComponent<Lean.Touch.LeanDragTranslate>().enabled = false;
+            //TA.StartCoroutine(PlayAnim());
+            TA.PlayAnim();
 
-            if (FirstTime)
-            {
-                TA.PlayAnim();
-                FirstTime = false;
-            }
-        
         }
 
         else
         {
-            isLocked = false;
+
             if (wasClickedScale)
             {
                 Scaler.gameObject.SetActive(true);
@@ -84,8 +94,8 @@ public class LockManager : MonoBehaviour
             //Scaler.enabled = true;
             //Rotator.enabled = true;
             Model.GetComponent<Lean.Touch.LeanDragTranslate>().enabled = true;
-            //TA.StopAnim();
-            
+            TA.StopAnim();
+
         }
 
     }
@@ -117,7 +127,5 @@ public class LockManager : MonoBehaviour
             wasClickedRotate = false;
         }
     }
-
-   
 }
 

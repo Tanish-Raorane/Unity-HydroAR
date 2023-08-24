@@ -1787,17 +1787,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660d02783a95a354f92965fd0eb8396f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator_LF: {fileID: 0}
-  animator_OF: {fileID: 0}
-  animator_C1: {fileID: 0}
-  animator_C2: {fileID: 0}
-  animator_C3: {fileID: 0}
-  animator_AS: {fileID: 0}
-  animator_AE: {fileID: 0}
-  animator_AC: {fileID: 0}
-  R1: {fileID: 0}
-  R2: {fileID: 0}
-  R3: {fileID: 0}
+  EvaporationMessage: {fileID: 0}
+  TapOnScreenEva: {fileID: 0}
+  CloudFormMessage: {fileID: 0}
+  TapOnScreenCloudForm: {fileID: 0}
+  CloudMoveMessage: {fileID: 0}
+  TapOnScreenCloudMove: {fileID: 0}
+  PrecipitationMessage: {fileID: 0}
+  TapOnScreenPreci: {fileID: 0}
   Arrow_Sun: {fileID: 0}
   Arrow_Evaporation: {fileID: 0}
   Arrow_Cloud: {fileID: 0}
@@ -2031,17 +2028,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660d02783a95a354f92965fd0eb8396f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator_LF: {fileID: 0}
-  animator_OF: {fileID: 0}
-  animator_C1: {fileID: 0}
-  animator_C2: {fileID: 0}
-  animator_C3: {fileID: 0}
-  animator_AS: {fileID: 0}
-  animator_AE: {fileID: 0}
-  animator_AC: {fileID: 0}
-  R1: {fileID: 0}
-  R2: {fileID: 0}
-  R3: {fileID: 0}
+  EvaporationMessage: {fileID: 0}
+  TapOnScreenEva: {fileID: 0}
+  CloudFormMessage: {fileID: 0}
+  TapOnScreenCloudForm: {fileID: 0}
+  CloudMoveMessage: {fileID: 0}
+  TapOnScreenCloudMove: {fileID: 0}
+  PrecipitationMessage: {fileID: 0}
+  TapOnScreenPreci: {fileID: 0}
   Arrow_Sun: {fileID: 0}
   Arrow_Evaporation: {fileID: 0}
   Arrow_Cloud: {fileID: 0}
@@ -3517,7 +3511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1883924285
 Transform:
   m_ObjectHideFlags: 0
