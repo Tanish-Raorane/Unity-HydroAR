@@ -47,9 +47,22 @@ public class ScreenLoader : MonoBehaviour
         Lighting.SetActive(false);
         Surface.SetActive(true);
     } 
-    public void BackToLighting()
+    public void BackToLightingFromAR1()
     {
         ARScreen1.SetActive(false);
         Lighting.SetActive(true);
     }
+
+    public void BackToLightingFromAR2()
+    {
+        ARScreen2.SetActive(false);
+        ARScreen1.SetActive(false);
+        Lighting.SetActive(true);
+    }
+
+    //public void HamburgerButton()
+    //{
+    //    Surface.SetActive(false);
+    //}
+
 }
