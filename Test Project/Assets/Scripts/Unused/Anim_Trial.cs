@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Anim_Trial : MonoBehaviour
 {
+    public Button RestartButton, NextButton;
     public Image EvaporationMessage, TapOnScreenEva;
     public Image CloudFormMessage, TapOnScreenCloudForm;
     public Image CloudMoveMessage, TapOnScreenCloudMove;
@@ -36,6 +37,8 @@ public class Anim_Trial : MonoBehaviour
         lockmanager = gameObject.GetComponent<LockManager>();
     }
 
+    
+
 
     public void PlayAnim()
     {
@@ -62,9 +65,6 @@ public class Anim_Trial : MonoBehaviour
         Arrow_Evaporation.SetActive(false);
         Arrow_Cloud.SetActive(false);
 
-
-
-
         lockmanager.animator_AS.Rebind();
         lockmanager.animator_AS.Update(0f);
         lockmanager.animator_AE.Rebind();
@@ -86,6 +86,12 @@ public class Anim_Trial : MonoBehaviour
         lockmanager.R2.Stop();
         lockmanager.R3.Stop();
 
+        lockmanager.FirstTime = true;
+        RestartButton.gameObject.SetActive(false);
+        NextButton.gameObject.SetActive(false);
+        lockmanager.playbutton.gameObject.SetActive(true);
+        lockmanager.Lock();
+        
     }
 
     private void Update()
@@ -122,6 +128,7 @@ public class Anim_Trial : MonoBehaviour
         //{
         //    yield return new WaitUntil(() => lockmanager.isLocked == true);
         //}
+        
         Arrow_Evaporation.SetActive(true);
         lockmanager.animator_AE.SetTrigger("Arrow_Evaporation");
         yield return new WaitForSecondsRealtime(6f);
@@ -134,9 +141,10 @@ public class Anim_Trial : MonoBehaviour
 
         EvaporationMessage.gameObject.SetActive(true);
         TapOnScreenEva.gameObject.SetActive(true);
+        lockmanager.playbutton.gameObject.SetActive(false);
 
 
-        yield return new WaitUntil(() => lockmanager.isLocked == true);
+        
         canTap = true;
 
         yield return new WaitUntil(() => count == 1);
@@ -145,7 +153,7 @@ public class Anim_Trial : MonoBehaviour
 
         EvaporationMessage.gameObject.SetActive(false);
         TapOnScreenEva.gameObject.SetActive(false);
-
+        lockmanager.playbutton.gameObject.SetActive(true);
 
         lockmanager.animator_C1.SetTrigger("Cloud 1_Formation");
         lockmanager.animator_C2.SetTrigger("Cloud 2_Formation");
@@ -155,8 +163,9 @@ public class Anim_Trial : MonoBehaviour
 
         CloudFormMessage.gameObject.SetActive(true);
         TapOnScreenCloudForm.gameObject.SetActive(true);
+        lockmanager.playbutton.gameObject.SetActive(false);
 
-        yield return new WaitUntil(() => lockmanager.isLocked == true);
+       
 
         canTap = true;
         yield return new WaitUntil(() => count == 2);
@@ -164,6 +173,7 @@ public class Anim_Trial : MonoBehaviour
 
         CloudFormMessage.gameObject.SetActive(false);
         TapOnScreenCloudForm.gameObject.SetActive(false);
+        lockmanager.playbutton.gameObject.SetActive(true);
 
         Arrow_Cloud.SetActive(true);
         lockmanager.animator_AC.SetTrigger("Arrow_Clouds");
@@ -178,13 +188,14 @@ public class Anim_Trial : MonoBehaviour
 
         CloudMoveMessage.gameObject.SetActive(true);
         TapOnScreenCloudMove.gameObject.SetActive(true);
+        lockmanager.playbutton.gameObject.SetActive(false);
 
         canTap = true;
-        yield return new WaitUntil(() => lockmanager.isLocked == true);
         yield return new WaitUntil(() => count == 3);
 
         CloudMoveMessage.gameObject.SetActive(false);
         TapOnScreenCloudMove.gameObject.SetActive(false);
+        lockmanager.playbutton.gameObject.SetActive(true);
 
         lockmanager.R1.Play();
         lockmanager.R2.Play();
@@ -194,8 +205,15 @@ public class Anim_Trial : MonoBehaviour
 
         PrecipitationMessage.gameObject.SetActive(true);
         TapOnScreenPreci.gameObject.SetActive(true);
+        lockmanager.playbutton.gameObject.SetActive(false);
+        canTap = true;
+        yield return new WaitUntil(() => count == 4);
 
-
+        PrecipitationMessage.gameObject.SetActive(false);
+        TapOnScreenPreci.gameObject.SetActive(false);
+        RestartButton.gameObject.SetActive(true);
+        NextButton.gameObject.SetActive(true);
+        lockmanager.Lock();
     }
 }
 

@@ -16,7 +16,7 @@ public class LockManager : MonoBehaviour
     //Tap_Anim TA;
     bool wasClickedScale = false;
     bool wasClickedRotate = false;
-    bool FirstTime = true;
+    public bool FirstTime = true;
 
     /* For Rebinding (Resetting) all animations once the 
      *  user presses on Play Button to start animation.*/
