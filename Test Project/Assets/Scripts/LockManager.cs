@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class LockManager : MonoBehaviour
 {
     public Button playbutton;
+    public Image playButtonImg;
+    public Sprite[] sprites;
     public bool isPaused = false;
     public bool isLocked = false;
     public GameObject Model;
@@ -54,6 +56,7 @@ public class LockManager : MonoBehaviour
         if (!isLocked)
         {
             isLocked = true;
+            playButtonImg.sprite = sprites[1];
             Scaler.gameObject.SetActive(false);
             Rotator.gameObject.SetActive(false);
             ScaleButton.gameObject.SetActive(false);
@@ -71,6 +74,7 @@ public class LockManager : MonoBehaviour
         else
         {
             isLocked = false;
+            playButtonImg.sprite = sprites[0];
             if (wasClickedScale)
             {
                 Scaler.gameObject.SetActive(true);
