@@ -9,19 +9,20 @@ public class ScreenLoader : MonoBehaviour
     public GameObject Lighting;
     public GameObject ARScreen1;
     public GameObject ARScreen2;
+    public GameObject HamburgerButton;
     public GameObject Indicator;
     public void SurfaceScreenLoader()
     {
         Warning.SetActive(false);
         Surface.SetActive(true);
     }
-    
+
     public void LightingScreenLoader()
     {
         Surface.SetActive(false);
         Lighting.SetActive(true);
     }
-    
+
     public void ARScreenLoader()
     {
         if (!Indicator.activeInHierarchy)
@@ -37,16 +38,16 @@ public class ScreenLoader : MonoBehaviour
         }
     }
 
-   public void BackToWarning()
+    public void BackToWarning()
     {
         Surface.SetActive(false);
         Warning.SetActive(true);
-    } 
+    }
     public void BackToSurface()
     {
         Lighting.SetActive(false);
         Surface.SetActive(true);
-    } 
+    }
     public void BackToLightingFromAR1()
     {
         ARScreen1.SetActive(false);
@@ -60,9 +61,17 @@ public class ScreenLoader : MonoBehaviour
         Lighting.SetActive(true);
     }
 
-    //public void HamburgerButton()
-    //{
-    //    Surface.SetActive(false);
-    //}
 
+    public void Hamburger()
+
+    {
+
+        HamburgerButton.SetActive(true);
+    }
+
+
+    public void BackFromHamburger()
+    {
+        HamburgerButton.SetActive(false);
+    }
 }

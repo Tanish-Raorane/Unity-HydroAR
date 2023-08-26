@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class AdditiveSceneLoad : MonoBehaviour
 {
     public GameObject Indi;
+    public GameObject backbutton;
  
     public void LoadScene(string SceneName)
     {
-        
-            SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
+
+        backbutton.SetActive(false);
+        SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
         
     }
 }
