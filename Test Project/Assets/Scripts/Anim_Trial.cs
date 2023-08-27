@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Anim_Trial : MonoBehaviour
 {
     public Button RestartButton, NextButton;
-    public Image EvaporationMessage, TapOnScreenEva;
+    public RawImage EvaporationMessage, TapOnScreenEva;
     public Image CloudFormMessage, TapOnScreenCloudForm;
     public Image CloudMoveMessage, TapOnScreenCloudMove;
     public Image PrecipitationMessage, TapOnScreenPreci;
@@ -183,7 +183,7 @@ public class Anim_Trial : MonoBehaviour
         lockmanager.animator_C1.SetTrigger("Cloud 1_Movement");
         lockmanager.animator_C2.SetTrigger("Cloud 2_Movement");
         lockmanager.animator_C3.SetTrigger("Cloud 3_Movement");
-        yield return new WaitForSecondsRealtime(8.1f);
+        yield return new WaitForSecondsRealtime(9.5f);
         yield return new WaitUntil(() => lockmanager.isLocked == true);
 
         CloudMoveMessage.gameObject.SetActive(true);
