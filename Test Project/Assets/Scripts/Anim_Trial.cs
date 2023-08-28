@@ -8,9 +8,11 @@ public class Anim_Trial : MonoBehaviour
 {
     public Button RestartButton, NextButton;
     public RawImage EvaporationMessage, TapOnScreenEva;
-    public Image CloudFormMessage, TapOnScreenCloudForm;
-    public Image CloudMoveMessage, TapOnScreenCloudMove;
-    public Image PrecipitationMessage, TapOnScreenPreci;
+    public RawImage CloudFormMessage, TapOnScreenCloudForm;
+    public RawImage CloudMoveMessage, TapOnScreenCloudMove;
+    public RawImage PrecipitationMessage, TapOnScreenPreci;
+    public RawImage AfterPreciMessage, TapOnScreenAfterPreci;
+
 
 
     //public Animator animator_LF;
@@ -211,6 +213,13 @@ public class Anim_Trial : MonoBehaviour
 
         PrecipitationMessage.gameObject.SetActive(false);
         TapOnScreenPreci.gameObject.SetActive(false);
+        AfterPreciMessage.gameObject.SetActive(true);
+        TapOnScreenAfterPreci.gameObject.SetActive(true);
+        canTap = true;
+        yield return new WaitUntil(() => count == 5);
+
+        AfterPreciMessage.gameObject.SetActive(false);
+        TapOnScreenAfterPreci.gameObject.SetActive(false);
         RestartButton.gameObject.SetActive(true);
         NextButton.gameObject.SetActive(true);
         lockmanager.Lock();
