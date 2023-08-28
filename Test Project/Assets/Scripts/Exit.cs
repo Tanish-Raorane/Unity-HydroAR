@@ -14,6 +14,7 @@ public class Exit : MonoBehaviour
   
     public void Restart()
     {
+        Camera.main.gameObject.SetActive(true);
         HamburgerPage.SetActive(false);
         Surface.SetActive(false);
         Lighting.SetActive(false);

@@ -26,6 +26,9 @@ public class Scale_Rotate : MonoBehaviour
         Ind = GameObject.FindWithTag("PlaceIndicator");
         //Pivot_Point = GameObject.FindWithTag("PivotPoint");
         gameObject.transform.position = Ind.transform.position;
+        ARSO.MakeContentAppearAt(pivot.transform, pivot.transform.position, pivot.transform.rotation);
+        Vector3 rot = new Vector3(0, 135, 0);
+        ARSO.transform.Rotate(rot);
         //Pivot_Point.transform.position = gameObject.transform.position;
         //pivot.transform.position = gameObject.transform.position;
         //ARSO.MakeContentAppearAt(pivot.transform, pivot.transform.position, pivot.transform.rotation);
