@@ -22,6 +22,7 @@ public class ExitTerrainScene : MonoBehaviour
 
     public void Restart()
     {
+        SceneManager.UnloadSceneAsync(1);
         SceneManager.LoadScene(0);
     }
 

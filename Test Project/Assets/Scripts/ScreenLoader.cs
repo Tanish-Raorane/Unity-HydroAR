@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScreenLoader : MonoBehaviour
 {
@@ -65,14 +66,14 @@ public class ScreenLoader : MonoBehaviour
     public void Hamburger()
 
     {
-        Camera.main.gameObject.SetActive(false);
+        //Camera.main.gameObject.SetActive(false);
         HamburgerButton.SetActive(true);
     }
 
 
     public void BackFromHamburger()
     {
-        Camera.main.gameObject.SetActive(true);
+        //Camera.main.gameObject.SetActive(true);
         HamburgerButton.SetActive(false);
     }
 }

@@ -34,6 +34,10 @@ public class Anim_Trial : MonoBehaviour
     private Touch touch;
     //public LockManager lockmanager;
 
+    //Sound
+    public AudioSource Wind;
+    public AudioSource Thunder;
+
     void Start()
     {
         lockmanager = gameObject.GetComponent<LockManager>();
@@ -103,8 +107,8 @@ public class Anim_Trial : MonoBehaviour
             return;
         }
 
-        if (lockmanager.isLocked)
-        {
+        
+        
             if (Input.touchCount > 0 && canTap && touch.phase == TouchPhase.Began)
             {
                 
@@ -112,7 +116,7 @@ public class Anim_Trial : MonoBehaviour
                 touch = Input.GetTouch(0);
                 count++;
             }
-        }
+        
 
     }
 
@@ -185,6 +189,7 @@ public class Anim_Trial : MonoBehaviour
         lockmanager.animator_C1.SetTrigger("Cloud 1_Movement");
         lockmanager.animator_C2.SetTrigger("Cloud 2_Movement");
         lockmanager.animator_C3.SetTrigger("Cloud 3_Movement");
+        Wind.Play();
         yield return new WaitForSecondsRealtime(9.5f);
         yield return new WaitUntil(() => lockmanager.isLocked == true);
 
@@ -199,10 +204,12 @@ public class Anim_Trial : MonoBehaviour
         TapOnScreenCloudMove.gameObject.SetActive(false);
         lockmanager.playbutton.gameObject.SetActive(true);
 
+        Thunder.Play();
         lockmanager.R1.Play();
         lockmanager.R2.Play();
         lockmanager.R3.Play();
-        yield return new WaitForSecondsRealtime(6f);
+
+        yield return new WaitForSecondsRealtime(9f);
         yield return new WaitUntil(() => lockmanager.isLocked == true);
 
         PrecipitationMessage.gameObject.SetActive(true);
