@@ -213,13 +213,16 @@ public class Anim_Trial : MonoBehaviour
 
         PrecipitationMessage.gameObject.SetActive(false);
         TapOnScreenPreci.gameObject.SetActive(false);
+        
+
         AfterPreciMessage.gameObject.SetActive(true);
-        TapOnScreenAfterPreci.gameObject.SetActive(true);
+        //TapOnScreenAfterPreci.gameObject.SetActive(true);
         canTap = true;
-        yield return new WaitUntil(() => count == 5);
+        yield return new WaitForSecondsRealtime(5f);
+        //yield return new WaitUntil(() => count == 5);
 
         AfterPreciMessage.gameObject.SetActive(false);
-        TapOnScreenAfterPreci.gameObject.SetActive(false);
+        //TapOnScreenAfterPreci.gameObject.SetActive(false);
         RestartButton.gameObject.SetActive(true);
         NextButton.gameObject.SetActive(true);
         lockmanager.Lock();
