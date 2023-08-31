@@ -21,7 +21,7 @@ public class Audio : MonoBehaviour
         {
             if (!RainSound.isPlaying)
             {
-                RainSound.Play();
+                RainSound.PlayDelayed(3f);
             }
         }
 
