@@ -2802,7 +2802,7 @@ MonoBehaviour:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: c268578516fb41a4ba9a0c9adecdf21e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3204,7 +3204,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 96ecd7b50fc9c1349a1be657b1d6da50, type: 3}
+  m_Texture: {fileID: 2800000, guid: f8de8f7f4ffc8fc4793693c190b2e3d9, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3677,7 +3677,7 @@ MonoBehaviour:
   playButtonImg: {fileID: 1292333029}
   sprites:
   - {fileID: 21300000, guid: c268578516fb41a4ba9a0c9adecdf21e, type: 3}
-  - {fileID: 21300000, guid: 3b7fa121b54963f4caf8f1ecc242f3bc, type: 3}
+  - {fileID: 21300000, guid: 9380dd7883887c5429b29c4a82a7898c, type: 3}
   isPaused: 0
   isLocked: 0
   Model: {fileID: 1860063773447867894}
