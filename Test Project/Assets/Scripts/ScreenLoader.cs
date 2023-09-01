@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScreenLoader : MonoBehaviour
 {
@@ -75,5 +76,10 @@ public class ScreenLoader : MonoBehaviour
     {
         //Camera.main.gameObject.SetActive(true);
         HamburgerButton.SetActive(false);
+    }
+
+    public void BackFromWarning()  //From Warning To 6th_page
+    {
+        SceneManager.LoadScene("6th_page");
     }
 }

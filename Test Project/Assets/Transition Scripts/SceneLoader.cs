@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void LoadSecondScene()
+    public void LoadScene()
     {
         SceneManager.LoadScene("2nd_page");
     }

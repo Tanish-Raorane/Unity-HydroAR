@@ -3,14 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Quit_Button : MonoBehaviour
+public class Scene_6_Main : MonoBehaviour
 {
-    public void ExitNow()
-    {
-        Application.Quit();
-    }
-
-    public void ExploreAgain()
+    public void LoadMainscene()
     {
         SceneManager.LoadScene("Main Scene");
     }

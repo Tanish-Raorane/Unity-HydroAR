@@ -9,14 +9,62 @@ EditorBuildSettings:
     path: Assets/Scenes/Unused/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/1st_page.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/2nd_page.unity
+    guid: c1ee13a416da7e74e87536428d352ac4
+  - enabled: 1
+    path: Assets/Scenes/3rd_page.unity
+    guid: 0a57fbb2e51c0f140a54e390627e4eb8
+  - enabled: 1
+    path: Assets/Scenes/4th_page.unity
+    guid: e0e4436251b6e4046944abfe5fefb119
+  - enabled: 1
+    path: Assets/Scenes/5th_page.unity
+    guid: 05f54c6960a8066459190699752cffb8
+  - enabled: 1
+    path: Assets/Scenes/6th_page.unity
+    guid: fc638905633c52e47ad11f3ff09ee92b
+  - enabled: 1
     path: Assets/Scenes/Main Scene.unity
     guid: 44bbbb4c58ad5b843b723536655e29fa
-  - enabled: 0
-    path: Assets/Scenes/Unused/Copy.unity
-    guid: 2d995c4b7a5a55f46b76c1aea6f738eb
   - enabled: 1
     path: Assets/Scenes/Terrain.unity
     guid: 2ebd8d405fdece54881596940ed8d3d4
+  - enabled: 1
+    path: Assets/Scenes/8th_page.unity
+    guid: 2029fba42f3f43c4db07d520567eccb4
+  - enabled: 1
+    path: Assets/Scenes/9th_page.unity
+    guid: 155723fc24a124c49852e467df3a4f75
+  - enabled: 1
+    path: Assets/Scenes/10th_page.unity
+    guid: ab8b52f077714444690ffa5661e63875
+  - enabled: 1
+    path: Assets/Scenes/11th_page.unity
+    guid: 4f3b2f3d15554d4408052d51261104f2
+  - enabled: 1
+    path: Assets/Scenes/12th_page.unity
+    guid: 4796ad1b94b441f41a61350c4548b741
+  - enabled: 1
+    path: Assets/Scenes/13th_page.unity
+    guid: e820ffa858aa96b4c9f0cc118f1bf891
+  - enabled: 1
+    path: Assets/Scenes/14th_page.unity
+    guid: 6dad2bcd794084d44974eb5918dd3992
+  - enabled: 1
+    path: Assets/Scenes/15th_page.unity
+    guid: a62663aea29387749896c093c3f84992
+  - enabled: 1
+    path: Assets/Scenes/16th_page.unity
+    guid: fbfcd2768b1c4ab48aee512b7bda795b
+  - enabled: 1
+    path: Assets/Scenes/17th_page.unity
+    guid: dbeef9e1dab5b984ea0c9ee6295882ae
+  - enabled: 0
+    path: Assets/Scenes/Unused/Copy.unity
+    guid: 2d995c4b7a5a55f46b76c1aea6f738eb
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: a6c69e63cd5de3345a8caa0534f29123, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: 5c0cd0084b573bf459840c31edacf643, type: 2}

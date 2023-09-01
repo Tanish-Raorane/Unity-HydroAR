@@ -22,8 +22,7 @@ public class ExitTerrainScene : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.UnloadSceneAsync(1);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main Scene");
     }
 
     public void Quit()
@@ -40,5 +39,10 @@ public class ExitTerrainScene : MonoBehaviour
     {
         ExitPage.SetActive(false);
         HamburgerScreen.SetActive(true);
+    }
+
+    public void Next()
+    {
+        SceneManager.LoadScene("8th_page");
     }
 }

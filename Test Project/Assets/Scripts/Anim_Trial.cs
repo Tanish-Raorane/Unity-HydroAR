@@ -225,7 +225,7 @@ public class Anim_Trial : MonoBehaviour
         AfterPreciMessage.gameObject.SetActive(true);
         //TapOnScreenAfterPreci.gameObject.SetActive(true);
         canTap = true;
-        yield return new WaitForSecondsRealtime(7f);
+        yield return new WaitForSecondsRealtime(8f);
         //yield return new WaitUntil(() => count == 5);
 
         AfterPreciMessage.gameObject.SetActive(false);

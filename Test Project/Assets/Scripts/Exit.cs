@@ -26,7 +26,8 @@ public class Exit : MonoBehaviour
         Warning.SetActive(true);
         if (SceneManager.GetSceneByName(TerrainScene).isLoaded)
         {
-            SceneManager.UnloadSceneAsync(1);
+            //SceneManager.UnloadSceneAsync(1);
+            SceneManager.LoadScene("Main Scene");
            
         }
         

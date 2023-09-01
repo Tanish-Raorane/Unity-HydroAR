@@ -6,7 +6,7 @@ public class AudioManage : MonoBehaviour
 {
     public AudioSource ContinueButtonSound;
     public AudioSource BackButtonSound;
-
+    
     public void ContinueSound()
     {
         ContinueButtonSound.Play();
