@@ -1155,8 +1155,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Great job! We've explored the water cycle. Let's test our understanding
-    with a fun quiz now!
+  m_Text: Great job! We've successfully explored the water cycle. Let's test our
+    understanding with a fun quiz now!
 --- !u!222 &1968888897
 CanvasRenderer:
   m_ObjectHideFlags: 0
