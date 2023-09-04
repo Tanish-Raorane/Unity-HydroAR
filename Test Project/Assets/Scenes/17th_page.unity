@@ -945,8 +945,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Congratulations! You have completed the magical raindrop adventure and
-    gained a deep understanding of the water cycle. Well done!
+  m_Text: Congratulations!       You        have completed  the  magical  raindrop
+    adventure   and   gained   a   deep understanding of the water cycle. Well done!
 --- !u!222 &1354592621
 CanvasRenderer:
   m_ObjectHideFlags: 0
