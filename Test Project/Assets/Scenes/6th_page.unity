@@ -1265,8 +1265,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Intrigued,   Lily   followed   the raindrop  as it danced through the 
-    air,   leading    her   on   an extraordinary adventure.
+  m_Text: Intrigued, Lily followed the raindrop as it danced through the air, leading
+    her on an extraordinary adventure.
 --- !u!222 &2124653626
 CanvasRenderer:
   m_ObjectHideFlags: 0

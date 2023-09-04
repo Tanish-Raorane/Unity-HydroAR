@@ -270,9 +270,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: One   sunny   day,   as   she    was strolling      near     a     sparkling
-    stream,       she        noticed        a mysterious raindrop shimmering with
-    magical colors.
+  m_Text: One  sunny  day,  as  she  was  strolling  near  a  sparkling stream, 
+    she  noticed  a mysterious raindrop shimmering with magical colors.
 --- !u!222 &205549444
 CanvasRenderer:
   m_ObjectHideFlags: 0
