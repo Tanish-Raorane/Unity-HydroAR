@@ -10,6 +10,7 @@ public class scene_2_3 : MonoBehaviour
     public AudioSource BGMusic;
     private void Awake()
     {
+        //BGMusic.Play();
         DontDestroyOnLoad(BGMusic);
     }
     public void LoadSecondScene()

@@ -8,11 +8,16 @@ public class AudioManage : MonoBehaviour
     public AudioSource BackButtonSound;
     private AudioSource BackgroundMusic;
     
+    
 
     private void Awake()
     {
-        //BGMusic.stop();
+        scene_2_3 Obj = FindObjectOfType<scene_2_3>();
+        Obj.BGMusic.Stop();
+        Destroy(Obj.BGMusic);
     }
+
+    
     public void ContinueSound()
     {
         ContinueButtonSound.Play();

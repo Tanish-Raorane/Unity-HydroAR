@@ -8,6 +8,7 @@ public class ARSO_Holder : MonoBehaviour
     public ARSessionOrigin arSessionOrigin;
     public Camera arCamera;
     public GameObject Ham;
+    
     //public GameObject PivotPoint;
     //public AudioSource Bubbles;
 
