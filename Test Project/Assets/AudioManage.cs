@@ -6,16 +6,19 @@ public class AudioManage : MonoBehaviour
 {
     public AudioSource ContinueButtonSound;
     public AudioSource BackButtonSound;
-    private AudioSource BackgroundMusic;
+    private GameObject BackgroundMusic;
     
     
 
     private void Awake()
     {
-        scene_2_3 Obj = FindObjectOfType<scene_2_3>();
-        Obj.BGMusic.Stop();
-        Destroy(Obj.BGMusic);
+        BackgroundMusic = GameObject.FindWithTag("Audio");
+        if(BackgroundMusic != null)
+        {
+            BackgroundMusic.SetActive(false);
+        }
     }
+
 
     
     public void ContinueSound()

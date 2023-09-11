@@ -8,6 +8,7 @@ TagManager:
   - PivotPoint
   - PlaceIndicator
   - PlaceModelButton
+  - Audio
   layers:
   - Default
   - TransparentFX

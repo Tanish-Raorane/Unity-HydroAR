@@ -13,6 +13,14 @@ public class ScreenLoader : MonoBehaviour
     public GameObject ARScreen2;
     public GameObject HamburgerButton;
     public GameObject Indicator;
+
+    private GameObject AudBut;
+
+    private void Start()
+    {
+        AudBut = GameObject.FindWithTag("AudioButton");
+    }
+
     public void SurfaceScreenLoader()
     {
         Warning.SetActive(false);
@@ -80,6 +88,8 @@ public class ScreenLoader : MonoBehaviour
 
     public void BackFromWarning()  //From Warning To 6th_page
     {
+
+        AudBut.SetActive(false);
         SceneManager.LoadScene("6th_page");
     }
 }
