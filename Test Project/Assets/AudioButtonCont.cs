@@ -13,6 +13,15 @@ public class AudioButtonCont : MonoBehaviour
     void Start()
     {
         BGM = GameObject.FindWithTag("Audio");
+        if (BGM.activeInHierarchy)
+        {
+            AudioButtonImg.sprite = sprites[0];
+        }
+        else
+        {
+            AudioButtonImg.sprite = sprites[1];
+        }
+        
         
     }
 
@@ -36,13 +45,6 @@ public class AudioButtonCont : MonoBehaviour
     
     void Update()
     {
-        if (BGM.activeInHierarchy)
-        {
-            AudioButtonImg.sprite = sprites[0];
-        }
-        else
-        {
-            AudioButtonImg.sprite = sprites[1];
-        }
+        
     }
 }
