@@ -89,7 +89,7 @@ public class ScreenLoader : MonoBehaviour
     public void BackFromWarning()  //From Warning To 6th_page
     {
 
-        AudBut.SetActive(false);
+        //AudBut.SetActive(false);
         SceneManager.LoadScene("6th_page");
     }
 }
