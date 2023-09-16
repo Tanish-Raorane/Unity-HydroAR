@@ -142,7 +142,7 @@ public class Anim_Trial : MonoBehaviour
 
         lockmanager.animator_LF.SetTrigger("Tap_Lake_Fog");
         lockmanager.animator_OF.SetTrigger("Tap_Ocean_Fog");
-        yield return new WaitForSecondsRealtime(14f);
+        yield return new WaitForSecondsRealtime(15f);
         yield return new WaitUntil(() => lockmanager.isLocked == true);
 
         EvaporationMessage.gameObject.SetActive(true);
@@ -164,7 +164,7 @@ public class Anim_Trial : MonoBehaviour
         lockmanager.animator_C1.SetTrigger("Cloud 1_Formation");
         lockmanager.animator_C2.SetTrigger("Cloud 2_Formation");
         lockmanager.animator_C3.SetTrigger("Cloud 3_Formation");
-        yield return new WaitForSecondsRealtime(4.5f);
+        yield return new WaitForSecondsRealtime(6f);
         yield return new WaitUntil(() => lockmanager.isLocked == true);
 
         CloudFormMessage.gameObject.SetActive(true);
@@ -190,7 +190,7 @@ public class Anim_Trial : MonoBehaviour
         lockmanager.animator_C2.SetTrigger("Cloud 2_Movement");
         lockmanager.animator_C3.SetTrigger("Cloud 3_Movement");
         Wind.Play();
-        yield return new WaitForSecondsRealtime(9.5f);
+        yield return new WaitForSecondsRealtime(13f);
         yield return new WaitUntil(() => lockmanager.isLocked == true);
 
         CloudMoveMessage.gameObject.SetActive(true);
@@ -209,7 +209,7 @@ public class Anim_Trial : MonoBehaviour
         lockmanager.R2.Play();
         lockmanager.R3.Play();
 
-        yield return new WaitForSecondsRealtime(9f);
+        yield return new WaitForSecondsRealtime(13f);
         yield return new WaitUntil(() => lockmanager.isLocked == true);
 
         PrecipitationMessage.gameObject.SetActive(true);
