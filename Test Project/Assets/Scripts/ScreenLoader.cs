@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using ReadSpeaker;
 
 public class ScreenLoader : MonoBehaviour
 {
@@ -16,21 +17,30 @@ public class ScreenLoader : MonoBehaviour
 
     private GameObject AudBut;
 
+    public TTSSpeaker speaker;
+
     private void Start()
     {
-        AudBut = GameObject.FindWithTag("AudioButton");
+        //AudBut = GameObject.FindWithTag("AudioButton");
+        TTS.Init();
+        StartCoroutine(WarningCoroutine());
     }
 
     public void SurfaceScreenLoader()
     {
         Warning.SetActive(false);
         Surface.SetActive(true);
+        StartCoroutine(SurfaceScreenCoroutine());
+        
+        
     }
 
     public void LightingScreenLoader()
     {
         Surface.SetActive(false);
         Lighting.SetActive(true);
+        StartCoroutine(LightingScreenCoroutine());
+        
     }
 
     public void ARScreenLoader()
@@ -69,6 +79,7 @@ public class ScreenLoader : MonoBehaviour
         ARScreen2.SetActive(false);
         ARScreen1.SetActive(false);
         Lighting.SetActive(true);
+       
     }
 
 
@@ -91,5 +102,22 @@ public class ScreenLoader : MonoBehaviour
 
         //AudBut.SetActive(false);
         SceneManager.LoadScene("6th_page");
+    }
+
+    IEnumerator WarningCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(1.75f);
+        TTS.Say("Warning. Before playing this AR game, find a safe and clear space where you can move around easily. Don't play near busy roads or high places like balconies or roofs. Always be aware of what's around you and stay safe!", speaker);
+    }
+
+    IEnumerator SurfaceScreenCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        TTS.Say("Pick a surface that is flat, and has texture on it.", speaker);
+    } 
+    IEnumerator LightingScreenCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        TTS.Say("Make sure the lighting is not too bright, or too dark.", speaker);
     }
 }
