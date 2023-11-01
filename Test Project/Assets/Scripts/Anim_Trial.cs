@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using ReadSpeaker;
 
 public class Anim_Trial : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class Anim_Trial : MonoBehaviour
     public RawImage CloudMoveMessage, TapOnScreenCloudMove;
     public RawImage PrecipitationMessage, TapOnScreenPreci;
     public RawImage AfterPreciMessage, TapOnScreenAfterPreci;
-
+    bool inside = false;
 
 
     //public Animator animator_LF;
@@ -38,9 +39,17 @@ public class Anim_Trial : MonoBehaviour
     public AudioSource Wind;
     public AudioSource Thunder;
 
+    public TTSSpeaker speaker;
+    public TTSSpeaker speaker2;
+
     void Start()
     {
+        StopAllCoroutines();
+        TTS.Init();
         lockmanager = gameObject.GetComponent<LockManager>();
+        StartCoroutine(InitialAudioPrompt());
+        
+
     }
 
     
@@ -55,6 +64,8 @@ public class Anim_Trial : MonoBehaviour
 
     public void StopAnim()
     {
+
+        TTS.InterruptAll();
         StopCoroutine(After_AS());
         StopAllCoroutines();
 
@@ -111,7 +122,8 @@ public class Anim_Trial : MonoBehaviour
         
             if (Input.touchCount > 0 && canTap && touch.phase == TouchPhase.Began)
             {
-                
+                //TTS.InterruptAll();
+              
                 canTap = false;
                 touch = Input.GetTouch(0);
                 count++;
@@ -122,6 +134,9 @@ public class Anim_Trial : MonoBehaviour
 
     public IEnumerator After_AS()
     {
+        inside = true;
+        StopCoroutine(InitialAudioPrompt());
+        TTS.InterruptAll();
         count = 0;
         yield return new WaitUntil(() => lockmanager.isLocked == true);
         //Debug.Log("Start");
@@ -149,17 +164,22 @@ public class Anim_Trial : MonoBehaviour
         TapOnScreenEva.gameObject.SetActive(true);
         lockmanager.playbutton.gameObject.SetActive(false);
 
+        TTS.Say("The process that you just saw is called Evaporation!! The Sun’s heat warms up the water in oceans lakes and rivers, turning it into water vapour.", speaker);
+        yield return new WaitUntil(() => !speaker.audioSource.isPlaying);
+        TTS.Say("Tap on the screen to explore the next experience!!", speaker);
 
-        
         canTap = true;
 
-        yield return new WaitUntil(() => count == 1);
 
+
+        yield return new WaitUntil(() => count == 1);
+       
 
 
         EvaporationMessage.gameObject.SetActive(false);
         TapOnScreenEva.gameObject.SetActive(false);
         lockmanager.playbutton.gameObject.SetActive(true);
+        
 
         lockmanager.animator_C1.SetTrigger("Cloud 1_Formation");
         lockmanager.animator_C2.SetTrigger("Cloud 2_Formation");
@@ -170,10 +190,14 @@ public class Anim_Trial : MonoBehaviour
         CloudFormMessage.gameObject.SetActive(true);
         TapOnScreenCloudForm.gameObject.SetActive(true);
         lockmanager.playbutton.gameObject.SetActive(false);
-
-       
-
+        TTS.Say("Next, the water vapour cools and changes back into tiny water droplets, thus forming clouds!! This is called Condensation.", speaker);
+        yield return new WaitUntil(() => !speaker.audioSource.isPlaying);
+        TTS.Say("Now, tap on the screen to see the effect of wind....", speaker);
         canTap = true;
+
+
+
+
         yield return new WaitUntil(() => count == 2);
 
 
@@ -196,6 +220,9 @@ public class Anim_Trial : MonoBehaviour
         CloudMoveMessage.gameObject.SetActive(true);
         TapOnScreenCloudMove.gameObject.SetActive(true);
         lockmanager.playbutton.gameObject.SetActive(false);
+        TTS.Say("The clouds move towards the mountain regions and become saturated.", speaker);
+        yield return new WaitUntil(() => !speaker.audioSource.isPlaying);
+        TTS.Say("Tap on the screen to see what happens next!!", speaker);
 
         canTap = true;
         yield return new WaitUntil(() => count == 3);
@@ -215,6 +242,11 @@ public class Anim_Trial : MonoBehaviour
         PrecipitationMessage.gameObject.SetActive(true);
         TapOnScreenPreci.gameObject.SetActive(true);
         lockmanager.playbutton.gameObject.SetActive(false);
+        TTS.Say("Eventually, the clouds become heavy with water droplets and release water back into the ground in the form of rain, snow, sleet, and hail. This is called Precipitation.", speaker2);
+        yield return new WaitUntil(() => !speaker2.audioSource.isPlaying);
+        TTS.Say("Tap on the screen to continue...", speaker2);
+
+
         canTap = true;
         yield return new WaitUntil(() => count == 4);
 
@@ -225,7 +257,9 @@ public class Anim_Trial : MonoBehaviour
         AfterPreciMessage.gameObject.SetActive(true);
         //TapOnScreenAfterPreci.gameObject.SetActive(true);
         canTap = true;
-        yield return new WaitForSecondsRealtime(8f);
+        TTS.Say("After Precipitation, the water goes back into the lakes rivers and oceans and gets warmed up by the Sun’s heat and turns into water vapour. I could go on all day, but you get the point!!", speaker2);
+
+        yield return new WaitUntil(() => !speaker2.audioSource.isPlaying);
         //yield return new WaitUntil(() => count == 5);
 
         AfterPreciMessage.gameObject.SetActive(false);
@@ -233,6 +267,29 @@ public class Anim_Trial : MonoBehaviour
         RestartButton.gameObject.SetActive(true);
         NextButton.gameObject.SetActive(true);
         lockmanager.Lock();
+        
+    }
+
+    public IEnumerator InitialAudioPrompt()
+    {
+        
+        yield return new WaitForSecondsRealtime(2f);
+        if (!inside)
+        {
+            TTS.Say("Now that you have placed the model, you can move the model by placing your finger on it and dragging it around.", speaker);
+        }
+        yield return new WaitUntil(() => !speaker.audioSource.isPlaying);
+        yield return new WaitForSecondsRealtime(2.5f);
+        if (!inside)
+        {
+            TTS.Say("You can scale and rotate the model by pressing on the respective buttons and adjusting the sliders to the desired scale and rotation.", speaker);
+        }
+        yield return new WaitUntil(() => !speaker.audioSource.isPlaying);
+        yield return new WaitForSecondsRealtime(2.5f);
+        if (!inside)
+        {
+            TTS.Say("You can click on the Play button given below to experience the process of water cycle.", speaker);
+        }
     }
 }
 

@@ -49,12 +49,14 @@ public class ScreenLoader : MonoBehaviour
         {
             Lighting.SetActive(false);
             ARScreen1.SetActive(true);
+            StartCoroutine(ARScreen1Coroutine());
         }
 
         else
         {
             Lighting.SetActive(false);
             ARScreen2.SetActive(true);
+            StopCoroutine(ARScreen1Coroutine());
         }
     }
 
@@ -112,12 +114,20 @@ public class ScreenLoader : MonoBehaviour
 
     IEnumerator SurfaceScreenCoroutine()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.5f);
         TTS.Say("Pick a surface that is flat, and has texture on it.", speaker);
     } 
     IEnumerator LightingScreenCoroutine()
     {
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(0.5f);
         TTS.Say("Make sure the lighting is not too bright, or too dark.", speaker);
     }
+
+    IEnumerator ARScreen1Coroutine()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        TTS.Say("Hold your device and move it to scan the flat area.", speaker);
+    }
+    
+    
 }
