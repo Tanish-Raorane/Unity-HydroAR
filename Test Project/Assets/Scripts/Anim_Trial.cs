@@ -37,10 +37,22 @@ public class Anim_Trial : MonoBehaviour
     //Sound
     public AudioSource Wind;
     public AudioSource Thunder;
+    
+
+    public AudioSource EvaporationVoice;
+    public AudioSource CondensationVoice;
+    public AudioSource SaturationVoice;
+    public AudioSource PrecipitationVoice;
+    public AudioSource AfterPreciVoice;
+    public AudioSource EvaTapVoice;
+    public AudioSource CondTapVoice;
+    public AudioSource SatTapVoice;
+    public AudioSource PreciTapVoice;
 
     void Start()
     {
         lockmanager = gameObject.GetComponent<LockManager>();
+        
     }
 
     
@@ -57,6 +69,7 @@ public class Anim_Trial : MonoBehaviour
     {
         StopCoroutine(After_AS());
         StopAllCoroutines();
+        count = 0;
 
         EvaporationMessage.gameObject.SetActive(false);
         TapOnScreenEva.gameObject.SetActive(false);
@@ -109,7 +122,7 @@ public class Anim_Trial : MonoBehaviour
 
         
         
-            if (Input.touchCount > 0 && canTap && touch.phase == TouchPhase.Began)
+            if (Input.touchCount > 0 && canTap /*&& touch.phase == TouchPhase.Began*/)
             {
                 
                 canTap = false;
@@ -149,14 +162,16 @@ public class Anim_Trial : MonoBehaviour
         TapOnScreenEva.gameObject.SetActive(true);
         lockmanager.playbutton.gameObject.SetActive(false);
 
+        EvaporationVoice.Play();
+        yield return new WaitUntil(() => !EvaporationVoice.isPlaying);
+        EvaTapVoice.Play();
 
-        
         canTap = true;
 
         yield return new WaitUntil(() => count == 1);
 
 
-
+        EvaTapVoice.Stop();
         EvaporationMessage.gameObject.SetActive(false);
         TapOnScreenEva.gameObject.SetActive(false);
         lockmanager.playbutton.gameObject.SetActive(true);
@@ -171,12 +186,17 @@ public class Anim_Trial : MonoBehaviour
         TapOnScreenCloudForm.gameObject.SetActive(true);
         lockmanager.playbutton.gameObject.SetActive(false);
 
-       
+        CondensationVoice.Play();
+        yield return new WaitUntil(() => !CondensationVoice.isPlaying);
+        CondTapVoice.Play();
+
+
 
         canTap = true;
         yield return new WaitUntil(() => count == 2);
 
 
+        CondTapVoice.Stop();
         CloudFormMessage.gameObject.SetActive(false);
         TapOnScreenCloudForm.gameObject.SetActive(false);
         lockmanager.playbutton.gameObject.SetActive(true);
@@ -197,9 +217,14 @@ public class Anim_Trial : MonoBehaviour
         TapOnScreenCloudMove.gameObject.SetActive(true);
         lockmanager.playbutton.gameObject.SetActive(false);
 
+        SaturationVoice.Play();
+        yield return new WaitUntil(() => !SaturationVoice.isPlaying);
+        SatTapVoice.Play();
+
         canTap = true;
         yield return new WaitUntil(() => count == 3);
 
+        SatTapVoice.Stop();
         CloudMoveMessage.gameObject.SetActive(false);
         TapOnScreenCloudMove.gameObject.SetActive(false);
         lockmanager.playbutton.gameObject.SetActive(true);
@@ -215,17 +240,25 @@ public class Anim_Trial : MonoBehaviour
         PrecipitationMessage.gameObject.SetActive(true);
         TapOnScreenPreci.gameObject.SetActive(true);
         lockmanager.playbutton.gameObject.SetActive(false);
+
+       
+        PrecipitationVoice.Play();
+        yield return new WaitUntil(() => !PrecipitationVoice.isPlaying);
+        PreciTapVoice.Play();
+
         canTap = true;
         yield return new WaitUntil(() => count == 4);
 
+        PreciTapVoice.Stop();
         PrecipitationMessage.gameObject.SetActive(false);
         TapOnScreenPreci.gameObject.SetActive(false);
         
 
         AfterPreciMessage.gameObject.SetActive(true);
+        AfterPreciVoice.Play();
         //TapOnScreenAfterPreci.gameObject.SetActive(true);
         canTap = true;
-        yield return new WaitForSecondsRealtime(8f);
+        yield return new WaitForSecondsRealtime(11f);
         //yield return new WaitUntil(() => count == 5);
 
         AfterPreciMessage.gameObject.SetActive(false);

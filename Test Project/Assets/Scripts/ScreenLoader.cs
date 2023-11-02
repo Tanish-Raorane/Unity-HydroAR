@@ -73,16 +73,28 @@ public class ScreenLoader : MonoBehaviour
     {
         Surface.SetActive(false);
         Warning.SetActive(true);
+        WarningVoice.Stop();
+        SurfaceVoice.Stop();
+        LightingVoice.Stop();
+        HoldTheDevice.Stop();
     }
     public void BackToSurface()
     {
         Lighting.SetActive(false);
         Surface.SetActive(true);
+        WarningVoice.Stop();
+        SurfaceVoice.Stop();
+        LightingVoice.Stop();
+        HoldTheDevice.Stop();
     }
     public void BackToLightingFromAR1()
     {
         ARScreen1.SetActive(false);
         Lighting.SetActive(true);
+        WarningVoice.Stop();
+        SurfaceVoice.Stop();
+        LightingVoice.Stop();
+        HoldTheDevice.Stop();
     }
 
     public void BackToLightingFromAR2()
@@ -90,6 +102,10 @@ public class ScreenLoader : MonoBehaviour
         ARScreen2.SetActive(false);
         ARScreen1.SetActive(false);
         Lighting.SetActive(true);
+        WarningVoice.Stop();
+        SurfaceVoice.Stop();
+        LightingVoice.Stop();
+        HoldTheDevice.Stop();
     }
 
 
