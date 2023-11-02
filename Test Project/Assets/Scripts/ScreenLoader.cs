@@ -24,7 +24,7 @@ public class ScreenLoader : MonoBehaviour
 
     private void Start()
     {
-        WarningVoice.PlayDelayed(2f);
+        WarningVoice.PlayDelayed(1.5f);
         //AudBut = GameObject.FindWithTag("AudioButton");
     }
 
@@ -33,7 +33,7 @@ public class ScreenLoader : MonoBehaviour
         Warning.SetActive(false);
         Surface.SetActive(true);
         WarningVoice.Stop();
-        SurfaceVoice.PlayDelayed(0.75f);
+        SurfaceVoice.PlayDelayed(0.5f);
     }
 
     public void LightingScreenLoader()
@@ -42,7 +42,7 @@ public class ScreenLoader : MonoBehaviour
         Lighting.SetActive(true);
         WarningVoice.Stop();
         SurfaceVoice.Stop();
-        LightingVoice.PlayDelayed(0.75f);
+        LightingVoice.PlayDelayed(0.5f);
     }
 
     public void ARScreenLoader()
@@ -54,7 +54,7 @@ public class ScreenLoader : MonoBehaviour
             WarningVoice.Stop();
             SurfaceVoice.Stop();
             LightingVoice.Stop();
-            HoldTheDevice.PlayDelayed(1f);
+            HoldTheDevice.PlayDelayed(0.5f);
         }
 
         else

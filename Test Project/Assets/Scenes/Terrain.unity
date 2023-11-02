@@ -234,7 +234,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 168
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -358,6 +358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RainSound: {fileID: 21703819}
   Rain1: {fileID: 810777907}
+  PreciMessage: {fileID: 1226625666}
+  AfterPreciMessage: {fileID: 1850042645}
 --- !u!4 &40806545
 Transform:
   m_ObjectHideFlags: 0
@@ -1904,7 +1906,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 55
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -2069,7 +2071,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 55
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4296,7 +4298,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 41
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
