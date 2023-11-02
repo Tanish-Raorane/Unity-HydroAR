@@ -14,23 +14,35 @@ public class ScreenLoader : MonoBehaviour
     public GameObject HamburgerButton;
     public GameObject Indicator;
 
+    public AudioSource WarningVoice;
+    public AudioSource SurfaceVoice;
+    public AudioSource LightingVoice;
+    public AudioSource HoldTheDevice;
+
+
     private GameObject AudBut;
 
     private void Start()
     {
-        AudBut = GameObject.FindWithTag("AudioButton");
+        WarningVoice.PlayDelayed(2f);
+        //AudBut = GameObject.FindWithTag("AudioButton");
     }
 
     public void SurfaceScreenLoader()
     {
         Warning.SetActive(false);
         Surface.SetActive(true);
+        WarningVoice.Stop();
+        SurfaceVoice.PlayDelayed(0.75f);
     }
 
     public void LightingScreenLoader()
     {
         Surface.SetActive(false);
         Lighting.SetActive(true);
+        WarningVoice.Stop();
+        SurfaceVoice.Stop();
+        LightingVoice.PlayDelayed(0.75f);
     }
 
     public void ARScreenLoader()
@@ -39,15 +51,24 @@ public class ScreenLoader : MonoBehaviour
         {
             Lighting.SetActive(false);
             ARScreen1.SetActive(true);
+            WarningVoice.Stop();
+            SurfaceVoice.Stop();
+            LightingVoice.Stop();
+            HoldTheDevice.PlayDelayed(1f);
         }
 
         else
         {
             Lighting.SetActive(false);
             ARScreen2.SetActive(true);
+            WarningVoice.Stop();
+            SurfaceVoice.Stop();
+            LightingVoice.Stop();
+            HoldTheDevice.Stop();
         }
     }
 
+    
     public void BackToWarning()
     {
         Surface.SetActive(false);
