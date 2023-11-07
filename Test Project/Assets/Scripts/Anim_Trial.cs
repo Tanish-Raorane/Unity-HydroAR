@@ -49,10 +49,14 @@ public class Anim_Trial : MonoBehaviour
     public AudioSource SatTapVoice;
     public AudioSource PreciTapVoice;
 
+    ARSO_Holder reference;
+    
+
     void Start()
     {
         lockmanager = gameObject.GetComponent<LockManager>();
-        
+        reference = FindObjectOfType<ARSO_Holder>();
+
     }
 
     
@@ -122,7 +126,7 @@ public class Anim_Trial : MonoBehaviour
 
         
         
-            if (Input.touchCount > 0 && canTap /*&& touch.phase == TouchPhase.Began*/)
+            if (Input.touchCount > 0 && canTap/*&& touch.phase == TouchPhase.Began*/)
             {
                 
                 canTap = false;
@@ -159,13 +163,15 @@ public class Anim_Trial : MonoBehaviour
         yield return new WaitUntil(() => lockmanager.isLocked == true);
 
         EvaporationMessage.gameObject.SetActive(true);
-        TapOnScreenEva.gameObject.SetActive(true);
+        
         lockmanager.playbutton.gameObject.SetActive(false);
 
         EvaporationVoice.Play();
         yield return new WaitUntil(() => !EvaporationVoice.isPlaying);
+        TapOnScreenEva.gameObject.SetActive(true);
         EvaTapVoice.Play();
 
+        yield return new WaitUntil(() => !reference.HamburgerScreen.activeInHierarchy && !reference.CreditsScreen.activeInHierarchy && !reference.PrivacyPolicyScreen.activeInHierarchy && !reference.AboutScreen.activeInHierarchy && !reference.ExitScreen.activeInHierarchy);
         canTap = true;
 
         yield return new WaitUntil(() => count == 1);
@@ -183,15 +189,16 @@ public class Anim_Trial : MonoBehaviour
         yield return new WaitUntil(() => lockmanager.isLocked == true);
 
         CloudFormMessage.gameObject.SetActive(true);
-        TapOnScreenCloudForm.gameObject.SetActive(true);
+       
         lockmanager.playbutton.gameObject.SetActive(false);
 
         CondensationVoice.Play();
         yield return new WaitUntil(() => !CondensationVoice.isPlaying);
+        TapOnScreenCloudForm.gameObject.SetActive(true);
         CondTapVoice.Play();
 
 
-
+        yield return new WaitUntil(() => !reference.HamburgerScreen.activeInHierarchy && !reference.CreditsScreen.activeInHierarchy && !reference.PrivacyPolicyScreen.activeInHierarchy && !reference.AboutScreen.activeInHierarchy && !reference.ExitScreen.activeInHierarchy);
         canTap = true;
         yield return new WaitUntil(() => count == 2);
 
@@ -214,13 +221,14 @@ public class Anim_Trial : MonoBehaviour
         yield return new WaitUntil(() => lockmanager.isLocked == true);
 
         CloudMoveMessage.gameObject.SetActive(true);
-        TapOnScreenCloudMove.gameObject.SetActive(true);
         lockmanager.playbutton.gameObject.SetActive(false);
 
         SaturationVoice.Play();
         yield return new WaitUntil(() => !SaturationVoice.isPlaying);
+        TapOnScreenCloudMove.gameObject.SetActive(true);
         SatTapVoice.Play();
 
+        yield return new WaitUntil(() => !reference.HamburgerScreen.activeInHierarchy && !reference.CreditsScreen.activeInHierarchy && !reference.PrivacyPolicyScreen.activeInHierarchy && !reference.AboutScreen.activeInHierarchy && !reference.ExitScreen.activeInHierarchy);
         canTap = true;
         yield return new WaitUntil(() => count == 3);
 
@@ -238,14 +246,15 @@ public class Anim_Trial : MonoBehaviour
         yield return new WaitUntil(() => lockmanager.isLocked == true);
 
         PrecipitationMessage.gameObject.SetActive(true);
-        TapOnScreenPreci.gameObject.SetActive(true);
         lockmanager.playbutton.gameObject.SetActive(false);
 
        
         PrecipitationVoice.Play();
         yield return new WaitUntil(() => !PrecipitationVoice.isPlaying);
+        TapOnScreenPreci.gameObject.SetActive(true);
         PreciTapVoice.Play();
 
+        yield return new WaitUntil(() => !reference.HamburgerScreen.activeInHierarchy && !reference.CreditsScreen.activeInHierarchy && !reference.PrivacyPolicyScreen.activeInHierarchy && !reference.AboutScreen.activeInHierarchy && !reference.ExitScreen.activeInHierarchy);
         canTap = true;
         yield return new WaitUntil(() => count == 4);
 

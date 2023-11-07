@@ -4646,6 +4646,11 @@ MonoBehaviour:
   CondTapVoice: {fileID: 1234819652}
   SatTapVoice: {fileID: 888733756}
   PreciTapVoice: {fileID: 772929019}
+  HamburgerScreen: {fileID: 0}
+  CreditsScreen: {fileID: 0}
+  PrivacyPolicyScreen: {fileID: 0}
+  AboutScreen: {fileID: 0}
+  ExitScreen: {fileID: 0}
 --- !u!1 &1479067027
 GameObject:
   m_ObjectHideFlags: 0

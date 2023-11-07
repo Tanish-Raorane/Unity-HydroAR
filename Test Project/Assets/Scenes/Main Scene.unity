@@ -4775,6 +4775,11 @@ MonoBehaviour:
   arSessionOrigin: {fileID: 725708272}
   arCamera: {fileID: 1821709406}
   Ham: {fileID: 563360236}
+  HamburgerScreen: {fileID: 1168624631}
+  CreditsScreen: {fileID: 1485019109}
+  PrivacyPolicyScreen: {fileID: 436197325}
+  AboutScreen: {fileID: 486625345}
+  ExitScreen: {fileID: 970385543}
 --- !u!4 &992530007
 Transform:
   m_ObjectHideFlags: 0

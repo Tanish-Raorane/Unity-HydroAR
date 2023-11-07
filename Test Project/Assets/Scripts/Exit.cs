@@ -14,7 +14,14 @@ public class Exit : MonoBehaviour
     public GameObject ARScreen1;
     public GameObject ARScreen2;
     public string TerrainScene;
-  
+
+    ScreenLoader screenloader;
+
+    private void Start()
+    {
+        screenloader = gameObject.GetComponent<ScreenLoader>();
+    }
+
     public void Restart()
     {
         
@@ -24,6 +31,12 @@ public class Exit : MonoBehaviour
         ARScreen1.SetActive(false);
         ARScreen2.SetActive(false);
         Warning.SetActive(true);
+        screenloader.SurfaceVoice.Stop();
+        screenloader.LightingVoice.Stop();
+        screenloader.HoldTheDevice.Stop();
+        screenloader.WarningVoice.PlayDelayed(1f);
+        
+
         if (SceneManager.GetSceneByName(TerrainScene).isLoaded)
         {
             //SceneManager.UnloadSceneAsync(1);
